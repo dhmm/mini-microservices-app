@@ -1,5 +1,4 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+	<title>Mini Microservices App</title>
+	<PostCreate/>
 </template>
