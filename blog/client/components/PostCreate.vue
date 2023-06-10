@@ -1,19 +1,3 @@
-<template>
-  <div>
-    <h1>Create Post</h1>
-		<p>
-			<label>Title</label>
-		</p>
-		<p>		
-			<input v-model="title" type="text" name="title"/>
-		</p>
-		<p>
-			<input @click="createPost" type="submit"/>
-		</p>
-		<hr>
-  </div>
-</template>
-
 <script>
 import axios from "axios";
 export default {
@@ -42,3 +26,19 @@ export default {
 	}
 }
 </script>
+
+<template>
+  <div>
+    <h1>Create Post</h1>
+		<p>
+			<label>Title</label>
+		</p>
+		<p>		
+			<input v-model="title" type="text" name="title"/>
+		</p>
+		<p>
+			<input @click="createPost" type="submit"/>
+		</p>
+		<hr>
+  </div>
+</template>
