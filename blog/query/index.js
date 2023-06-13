@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors);
+app.use(cors());
 
 const posts = {};
 //POST WILL LIKE THIS
@@ -24,25 +24,24 @@ app.get('/posts', (req,res) => {
 });
 
 app.post('/events', (req,res) =>{
-  // const { type, data } = req.body;
+  const { type, data } = req.body;
 
-  // if(type === 'PostCreated') {
-  //   const { id, title } = data;
+  if(type === 'PostCreated') {
+    const { id, title } = data;
 
-  //   posts[id] = { id , title, comments: [] };
-  // }
+    posts[id] = { id , title, comments: [] };
+  }
 
-  // if(type === 'CommentCreated')  {    
-  //   const { id, content, postId } = data;
+  if(type === 'CommentCreated')  {    
+    const { id, content, postId } = data;
 
-  //   const post = posts[postId];
-  //   post.comments.push({
-  //     id, content
-  //   });    
-  // }
+    const post = posts[postId];
+    post.comments.push({
+      id, content
+    });    
+  }
 
-  // console.log(posts);
-  console.log('event');
+  console.log(posts);  
   
   res.send({});
 });
