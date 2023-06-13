@@ -1,0 +1,1 @@
+export { default } from "file:///D:/Learning/Microservices%20with%20NodeJS%20and%20ReactJS/mini-microservices-app/blog/client/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
