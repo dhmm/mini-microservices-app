@@ -1,1 +1,0 @@
-export { default } from "file:///D:/Repositories/m/mini-microservices-app/blog/client/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
