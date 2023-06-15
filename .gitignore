@@ -1,0 +1,5 @@
+blog/client/package-lock.json
+blog/comments/package-lock.json
+blog/event-bus/package-lock.json
+blog/posts/package-lock.json
+blog/query/package-lock.json
