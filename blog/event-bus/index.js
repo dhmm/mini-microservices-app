@@ -12,13 +12,16 @@ app.post('/events', (req,res)=> {
   //We must add the catch because from Node 15+ it returning Error and not Warning and our app will crash
   //Unhandled Promise
   axios.post('http://localhost:4000/events', event ).catch((err) => {
-    console.log('POSTS : '+err.message);
+    console.log('POSTS SERVICE : '+err.message);
   });
   axios.post('http://localhost:4001/events', event ).catch((err) => {
-    console.log('COMMENTS : '+err.message);
+    console.log('COMMENTS SERVICE : '+err.message);
   });
   axios.post('http://localhost:4002/events', event ).catch((err) => {
     console.log('QUERY SERVICE : '+err.message);
+  });
+  axios.post('http://localhost:4003/events', event ).catch((err) => {
+    console.log('MODERATION SERVICE : '+err.message);
   });
 
   res.send({ status: 'OK' });
