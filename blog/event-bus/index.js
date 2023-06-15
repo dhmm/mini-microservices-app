@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.post('/events', (req,res)=> {
   const event = req.body;
-	console.log('Event emmited');
+	console.log('Event emmited : ' + event.type );
 	
   //We must add the catch because from Node 15+ it returning Error and not Warning and our app will crash
   //Unhandled Promise
