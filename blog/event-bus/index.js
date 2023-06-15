@@ -5,9 +5,13 @@ const axios = require('axios');
 const app = express();
 app.use(bodyParser.json());
 
+const events = [];
+
 app.post('/events', (req,res)=> {
   const event = req.body;
 	console.log('Event emmited : ' + event.type );
+
+	events.push(event);
 	
   //We must add the catch because from Node 15+ it returning Error and not Warning and our app will crash
   //Unhandled Promise
@@ -25,6 +29,10 @@ app.post('/events', (req,res)=> {
   });
 
   res.send({ status: 'OK' });
+})
+
+app.get('/events' , (req,res)=> {
+	res.send(events);
 })
 
 app.listen(4005, () => {
